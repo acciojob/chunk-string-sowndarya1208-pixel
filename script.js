@@ -1,7 +1,15 @@
 function stringChop(str, size) {
   // your code here
 
-    if (size <= 0 || str.length <= size) {
+    if (typeof size !== 'number' || size <= 0) {
+        return [str];
+    }
+    
+    if (!str || str.length === 0) {
+        return [''];
+    }
+    
+    if (str.length <= size) {
         return [str];
     }
     
