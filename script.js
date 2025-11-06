@@ -17,4 +17,5 @@ function stringChop(str, size) {
 const str = prompt("Enter String.");
 const size = prompt("Enter Chunk Size.");
 alert(stringChop(str, size));
+console. log(chunkString("12345", 2));
 
