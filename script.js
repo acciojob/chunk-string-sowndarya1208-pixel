@@ -1,24 +1,18 @@
 function stringChop(str, size) {
   // your code here
 
-    if (typeof size !== 'number' || size <= 0) {
-        return [str];
-    }
+   
+    if (typeof size !== 'number' || size <= 0) return [str];
+    if (!str) return [''];
     
-    if (!str || str.length === 0) {
-        return [''];
-    }
-    
-    if (str.length <= size) {
-        return [str];
-    }
-    
-    const chunks = [];
-    for (let i = 0; i < str.length; i += size) {
-        chunks.push(str.substring(i, i + size));
-    }
-    return chunks;
+    return Array.from(
+        { length: Math.ceil(str.length / size) },
+        (_, index) => str.substring(index * size, (index + 1) * size)
+    );
 	}
+    
+    
+    
 
 
 // Do not change the code below
